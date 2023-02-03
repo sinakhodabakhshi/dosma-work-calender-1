@@ -1,7 +1,6 @@
 import { useState } from "react";
-import PaymentInfo from "./PaymentInfo";
-import PaymentDetails from "./PaymentDetails";
-
+import BillPreview from "./BillPreview";
+import Bill from "./Bill";
 
 export default function Payment({ info }) {
   const [expanded, setExpanded] = useState(false);
@@ -10,14 +9,16 @@ export default function Payment({ info }) {
     setExpanded(!expanded);
   };
   return (
-    <div className="flex flex-col py-4 px-2 border-b border-b-[#80cbc4] dark:border-b-[#3D3D3D]">
-      <PaymentInfo
+    <div className="flex flex-col py-3 px-2 gap-y-4 border-b border-b-[#80cbc4] dark:border-b-[#3D3D3D]">
+      <BillPreview
         amount={info.amount}
         expanded={expanded}
         handleExpandClick={handleExpandClick}
       />
-      <PaymentDetails details={info.bill} expanded={expanded} />
-      <p className="text-end text-red-500 mt-3">{info.paymentMethod}</p>
+      <Bill details={info.bill} expanded={expanded} />
+      <p className="text-end font-semibold text-red-400 ">
+        {info.paymentMethod}
+      </p>
     </div>
   );
 }

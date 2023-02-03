@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
-import DayCard from "./DayCard";
-import TaskSection from "../../taskmanagement/TaskSection";
-import { dataContext } from "../../../App";
-
+import DayCard from "./DayCard/DayCard";
+import TaskSection from "../taskmanagement/TaskSection";
+import { dataContext } from "../../App";
 
 export default function CalDatePicker() {
-  const {itemsData : data} = useContext(dataContext);
+  const { itemsData: data } = useContext(dataContext);
   const [active, setActive] = useState(Object.keys(data)[1]);
 
   //please be carfull when you made changes to DayCard component , you probably going to breake this part of the app

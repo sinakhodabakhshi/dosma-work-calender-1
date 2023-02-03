@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Btn from "./Btn";
+import ExpandBtn from "./expandBtn/ExpandBtn";
 import Details from "./Details";
 
-export default function TaskDetails({details}) {
+export default function TaskDetails({ details }) {
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -10,7 +10,7 @@ export default function TaskDetails({details}) {
   };
   return (
     <div>
-      <Btn expanded={expanded} handleExpandClick={handleExpandClick} />
+      <ExpandBtn expanded={expanded} handleExpandClick={handleExpandClick} />
       <Details details={details} expanded={expanded} />
     </div>
   );

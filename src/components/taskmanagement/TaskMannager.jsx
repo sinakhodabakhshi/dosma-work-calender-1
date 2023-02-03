@@ -12,9 +12,9 @@ export default function TaskMannager({ tasks }) {
     }
   };
 
-  //depend on the order you resive tasks you should keep our remove reverse method
-  //default order is latest to oldest if you resive oldest to latest remove reverse method
-  
+  //depend on the order you resive tasks you should add reverse fucntion to tasks list
+  //current order is latest to oldest
+
   return (
     <>
       <div
@@ -22,7 +22,7 @@ export default function TaskMannager({ tasks }) {
         className="bg-slate-100 dark:bg-[#212121] border-x border-x-[#80cbc4] dark:border-x-[#3D3D3D] border-b  border-b-[#80cbc4] dark:border-b-[#3D3D3D] rounded-b-lg
          flex flex-row-reverse gap-x-2 gap-y-3 flex-wrap shrink justify-start pt-6 pb-5 px-2 mb-[18px]"
       >
-        {Object.keys(tasks).reverse().reverse().map((task) => (
+        {Object.keys(tasks).map((task) => (
           <TaskBtn
             key={task}
             taskDetail={tasks[task]}

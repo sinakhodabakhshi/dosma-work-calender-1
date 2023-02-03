@@ -4,7 +4,7 @@ export default function CardBtn({ id, first, isActive, children }) {
   return (
     <button
       value={id}
-      className={`relative border-l border-l-[#80cbc4] dark:border-l-[#3D3D3D] border-y border-y-[#80cbc4] dark:border-y-[#3D3D3D] ${
+      className={`relative transition-colors border-l border-l-[#80cbc4] dark:border-l-[#3D3D3D] border-y border-y-[#80cbc4] dark:border-y-[#3D3D3D] ${
         first && "border-r border-r-[#80cbc4] dark:border-r-[#3D3D3D]"
       } ${
         isActive &&

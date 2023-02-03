@@ -1,11 +1,8 @@
 import TaskMannager from "./TaskMannager";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export default function TaskSection({ haveActiveTask, tasks }) {
-  //all the animation added using this hook
-  const [sectionContainer] = useAutoAnimate();
   return (
-    <div ref={sectionContainer}>
+    <div>
       {haveActiveTask && tasks ? (
         <TaskMannager tasks={tasks} />
       ) : (

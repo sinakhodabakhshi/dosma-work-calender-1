@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TaskCard from "../taskCard/TaskCard";
 import TaskBtn from "./TaskBtn";
 
@@ -11,6 +11,11 @@ export default function TaskMannager({ tasks }) {
       else setActive(e.target.value);
     }
   };
+
+  //stopping state to save a task
+  useEffect(() => {
+    setActive(null);
+  }, [tasks]);
 
   //depend on the order you resive tasks you should add reverse fucntion to tasks list
   //current order is latest to oldest

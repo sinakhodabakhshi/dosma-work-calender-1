@@ -8,12 +8,11 @@ export default function DayCard({ id, first, dayDetails, isActive }) {
 
   return (
     <div
-      className={`grow basis-0 w-0 shrink flex flex-col justify-center items-center`}
+      className="grow basis-0 w-0 shrink flex flex-col justify-center items-center"
     >
       <DayFirstWord first={first} dayWord={dayWord} />
       <CardBtn isActive={isActive} first={first} id={id} >
         <ActiveTaskMark activeTask={activeTask} />
-
         <DayInfo isCurrent={isCurrent} day={day} />
       </CardBtn>
     </div>

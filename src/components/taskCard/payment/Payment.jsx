@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BillPreview from "./BillPreview";
 import Bill from "./Bill";
+import PaymentMethod from "./PaymentMethod";
 
 export default function Payment({ info }) {
   const [expanded, setExpanded] = useState(false);
@@ -16,9 +17,7 @@ export default function Payment({ info }) {
         handleExpandClick={handleExpandClick}
       />
       <Bill details={info.bill} expanded={expanded} />
-      <p className="text-end mt-5 font-semibold text-red-400 ">
-        {info.paymentMethod}
-      </p>
+      <PaymentMethod paymentMethod={info.paymentMethod} />
     </div>
   );
 }

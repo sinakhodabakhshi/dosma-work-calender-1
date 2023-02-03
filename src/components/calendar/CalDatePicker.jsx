@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import DayCard from "./DayCard/DayCard";
+import DayCardsList from "./DayCard/DayCardsList";
 import TaskSection from "../taskmanagement/TaskSection";
-import { dataContext } from "../../App";
+import DataContext from "../../context/dataContext";
 
 export default function CalDatePicker() {
-  const { itemsData: data } = useContext(dataContext);
+  const { itemsData: data } = useContext(DataContext);
   const [active, setActive] = useState(Object.keys(data)[1]);
 
   //please be carfull when you made changes to DayCard component , you probably going to breake this part of the app
@@ -21,18 +21,10 @@ export default function CalDatePicker() {
         onClick={handleClick}
         className="mx-auto flex flex-row-reverse text-sm"
       >
-        {Object.keys(data).map((day, index) => (
-          <DayCard
-            key={day}
-            id={day}
-            first={index === 0}
-            dayDetails={data[day]}
-            isActive={active === day}
-          />
-        ))}
+        <DayCardsList data={data} active={active} />
       </div>
 
-      {active && (
+      {active && data[active] && (
         <TaskSection
           haveActiveTask={data[active].activeTask}
           tasks={data[active].tasks}

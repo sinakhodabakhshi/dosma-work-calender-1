@@ -1,11 +1,9 @@
-import React from "react";
 import CalDatePicker from "./CalDatePicker";
 import CalHeader from "./CalHeader";
 
 export default function Calendar() {
-
   return (
-    <section >
+    <section>
       <CalHeader />
       <CalDatePicker />
     </section>

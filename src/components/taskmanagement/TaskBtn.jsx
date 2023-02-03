@@ -1,8 +1,6 @@
-import React from "react";
-
 export default function TaskBtn({ taskDetail, isActive }) {
   const { task, time, id } = taskDetail;
-  
+
   return (
     <button
       value={id}

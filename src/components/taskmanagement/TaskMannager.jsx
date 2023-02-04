@@ -12,7 +12,7 @@ export default function TaskMannager({ tasks }) {
     }
   };
 
-  //stopping state to save a task
+  //stopping state from saving a task
   useEffect(() => {
     setActive(null);
   }, [tasks]);
